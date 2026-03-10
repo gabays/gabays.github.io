@@ -81,7 +81,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 .publication{border-left:4px solid var(--accent);padding-left:1rem;cursor:pointer;transition:all .2s}
 .publication:hover{border-left-color:var(--primary)}
 .publication-title{font-weight:bold;color:var(--primary);margin-bottom:.3rem;font-size:.95rem}
-.publication-authors{color:var(--light-text);font-style:italic;margin-bottom:.3rem;font-size:.85rem}
+.publication-authors{color:var(--light-text);margin-bottom:.3rem;font-size:.85rem}
 .publication-meta{color:var(--light-text);font-size:.8rem;display:flex;align-items:center;gap:.5rem}
 .talk-item{padding:1rem 0;border-bottom:1px solid var(--border)}
 .talk-item:last-child{border-bottom:none}
@@ -319,7 +319,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 <h2>Projects</h2>
 <div id="freem">
 	<h3>FreEM</h3>
-	<div class="task-block">
+	<div class="task-block" onclick="window.open('https://freem-corpora.github.io','_blank')">
 	<div class="card">
 		<p>FreEM corpora is a project dedicated to Early Modern French (16th–18th centuries). It provides corpora and NLP models for several core tasks, including lemmatisation, part-of-speech tagging, linguistic normalisation, and named entity recognition.</p>
 		<p>The project brings together specialists in NLP and philology in order to deliver accurate linguistic modelling, large-scale annotated corpora, state-of-the-art models, and linguistic studies of Early Modern French.</p>
@@ -329,7 +329,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 	</div>
 	</div>
 </div>
-<div id="gallicorpora">
+<div id="gallicorpora" onclick="window.open('https://gallicorpora.github.io','_blank')">
 	<h3>Gallic(orpor)a</h3>
 	<div class="task-block">
 	<div class="card">
@@ -342,7 +342,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 </div>
 <div id="katabase">
 	<h3>Katabase</h3>
-	<div class="task-block">
+	<div class="task-block" onclick="window.open('https://katabase.huma-num.fr','_blank')">
 	<div class="card">
 		<p>this project is at the junction of romance philology and computer science: by combining the needs of the first with the possibilities offered by the second, we plan to explore our capacity to automatically extract, structure and annotate sale catalogues to create a database of sold manuscripts in Paris since the beginning of the 19th c. Data will also be automatically analysed to identify same manuscripts sold mulptiple times over time, and reconstruct the history of manuscripts.</p>
 	</div>
@@ -358,45 +358,50 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 <div id="jourals">
 <h3>Journals</h3>
 <div class="publications-container section-items">
-<div class="card publication" onclick="window.open('#','_blank')">
-<div class="publication-title">Multilingual NER Study</div>
-<div class="publication-authors">Johnson, Lee, Doe</div>
-<div class="publication-meta"><span>Journal 2023</span></div>
+<div class="card publication" onclick="window.open('https://doi.org/10.4000/15ick','_blank')">
+<div class="publication-title">Lire avant de faire lire. Réflexions philologiques sur la reconnaissance automatique de texte pour les manuscrits modernes français</div>
+<div class="publication-authors">Simon Gabay, Ariane Pinche, Peter Nahon, Alix Chagué, Pauline Jacsont, Élodie Paupe, Jean-Claude Rebetez, Maxime Humeau, Christine Payot, Thibault Maillard, Yvan Jauregui, Elina Leblanc and Loraine Chappuis</div>
+<div class="publication-meta"><span><i>Humanités numériques</i> 12 | 2025</span></div>
 </div>
-<div class="card publication" onclick="window.open('#','_blank')">
-<div class="publication-title">Multilingual NER Study</div>
-<div class="publication-authors">Johnson, Lee, Doe</div>
-<div class="publication-meta"><span>Journal 2023</span></div>
+<div class="card publication" onclick="window.open('https://doi.org/10.3389/frcha.2025.1519753','_blank')">
+<div class="publication-title">Detecting ADHD through natural language processing and stylometric analysis of adolescent narratives</div>
+<div class="publication-authors">Juan Barrios, Elena Poznyak, Jessica Lee Samson, Halima Rafi, Simon Gabay, Florian Cafiero and Martin Debbané</div>
+<div class="publication-meta"><span><i>Frontiers in Child and Adolescent Psychiatry</i> 4 | 2025</span></div>
 </div>
-<div class="card publication" onclick="window.open('#','_blank')">
-<div class="publication-title">Multilingual NER Study</div>
-<div class="publication-authors">Johnson, Lee, Doe</div>
-<div class="publication-meta"><span>Journal 2023</span></div>
+<div class="card publication" onclick="window.open('https://doi.org/10.4000/1498n','_blank')">
+<div class="publication-title">Rien de Nouveau chez Rimbaud : sur l’attribution des <i>Illuminations</i></div>
+<div class="publication-authors">Simon Gabay</div>
+<div class="publication-meta"><span><i>Humanités numériques</i> 11 | 2025</span></div>
 </div>
-<div class="card publication" onclick="window.open('#','_blank')">
-<div class="publication-title">Multilingual NER Study</div>
-<div class="publication-authors">Johnson, Lee, Doe</div>
-<div class="publication-meta"><span>Journal 2023</span></div>
+<div class="card publication" onclick="window.open('https://dx.doi.org/10.46298/jdmdh.12689','_blank')">
+<div class="publication-title">SegmOnto: A Controlled Vocabulary to Describe and Process Digital Facsimiles</div>
+<div class="publication-authors">Simon Gabay, Ariane Pinche, Kelly Christensen and Jean-Baptiste Camps</div>
+<div class="publication-meta"><span><i>Journal of Data Mining and Digital Humanities</i> 2024</span></div>
 </div>
-<div class="card publication" onclick="window.open('#','_blank')">
-<div class="publication-title">Multilingual NER Study</div>
-<div class="publication-authors">Johnson, Lee, Doe</div>
-<div class="publication-meta"><span>Journal 2023</span></div>
+<div class="card publication" onclick="window.open('https://dx.doi.org/10.46298/jdmdh.6492','_blank')">
+<div class="publication-title">OCR17: Ground Truth and Models for 17th c. French Prints (and hopefully more)</div>
+<div class="publication-authors">Simon Gabay, Thibault Clérice and Christian Reul</div>
+<div class="publication-meta"><span><i>Journal of Data Mining and Digital Humanities</i> 2023</span></div>
 </div>
-<div class="card publication" onclick="window.open('#','_blank')">
-<div class="publication-title">Multilingual NER Study</div>
-<div class="publication-authors">Johnson, Lee, Doe</div>
-<div class="publication-meta"><span>Journal 2023</span></div>
+<div class="card publication" onclick="window.open('https://dx.doi.org/10.3917/dss.233.0481','_blank')">
+<div class="publication-title">Modernités de Richard Simon : notes philologiques en vue d'une édition du Pentateuque traduit, avec des Remarques (Bibliothèque d'Aschaffenbourg, Ms. 48)</div>
+<div class="publication-authors">Peter Nahon, Simon Gabay</div>
+<div class="publication-meta"><span><i>Dix-septième siècle</i> 300 | 2023</span></div>
 </div>
-<div class="card publication" onclick="window.open('#','_blank')">
-<div class="publication-title">Multilingual NER Study</div>
-<div class="publication-authors">Johnson, Lee, Doe</div>
-<div class="publication-meta"><span>Journal 2023</span></div>
+<div class="card publication" onclick="window.open('https://dx.doi.org/10.4000/linx.9346','_blank')">
+<div class="publication-title">Ancien ou moderne ? Pistes computationnelles pour l'analyse graphématique des textes écrits au XVIIe siècle</div>
+<div class="publication-authors">Simon Gabay, Philippe Gambette, Rachel Bawden, Benoît Sagot</div>
+<div class="publication-meta"><span><i>Linx</i> 85 | 2022</span></div>
 </div>
-<div class="card publication" onclick="window.open('#','_blank')">
-<div class="publication-title">Multilingual NER Study</div>
-<div class="publication-authors">Johnson, Lee, Doe</div>
-<div class="publication-meta"><span>Journal 2023</span></div>
+<div class="card publication" onclick="window.open('https://dx.doi.org/10.46298/jdmdh.6485','_blank')">
+<div class="publication-title">Corpus and Models for Lemmatisation and POS-tagging of Classical French Theatre</div>
+<div class="publication-authors">Jean-Baptiste Camps, Simon Gabay, Paul Fièvre, Thibault Clérice, Florian Cafiero</div>
+<div class="publication-meta"><span><i>Journal of Data Mining and Digital Humanities</i> 2021</span></div>
+</div>
+<div class="card publication" onclick="window.open('https://doi.org/10.58282/colloques.13218','_blank')">
+<div class="publication-title">La naissance de Marie-Blanche de Grignan. Notes sur la mise en page de la polyphonie sévignéenne</div>
+<div class="publication-authors">Simon Gabay</div>
+<div class="publication-meta"><span><i>Les discours rapportés en contexte épistolaire (XVIe-XVIIIe siècles)</i> 2017</span></div>
 </div>
 </div>
 <button class="show-more-btn" onclick="toggleShowMore(this)">Show 1 more</button>
