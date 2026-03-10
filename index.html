@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV Site</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#1a3a52;--secondary:#2c5f7f;--accent:#5a9bd4;--text:#2c3e50;--light-text:#7f8c8d;--light-bg:#ecf2f7;--white:#fff;--border:#d4dfe8;--sidebar-width:280px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;line-height:1.4;color:var(--text);background:#f5f8fa}
+.sidebar{position:fixed;left:0;top:0;width:var(--sidebar-width);height:100vh;background:var(--white);border-right:2px solid var(--light-bg);padding:1.25rem 0;overflow-y:auto;z-index:1000}
+.sidebar-header{padding:0 1.25rem 1.25rem;border-bottom:2px solid var(--light-bg);margin-bottom:1.25rem}
+.sidebar-logo{font-size:1.4rem;font-weight:bold;color:var(--primary);text-decoration:none;display:block;margin-bottom:.4rem}
+.sidebar-tagline{font-size:.8rem;color:var(--light-text);line-height:1.3}
+.sidebar-social{display:flex;gap:.75rem;margin-top:.75rem;flex-wrap:wrap}
+.social-link{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:4px;background:var(--light-bg);color:var(--primary);text-decoration:none;transition:all .2s}
+.social-link:hover{background:var(--accent);color:var(--white);transform:translateY(-2px)}
+.sidebar-contact{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--light-bg);font-size:.75rem;line-height:1.5;color:var(--light-text)}
+.sidebar-contact p{margin-bottom:.4rem}
+.sidebar-contact strong{color:var(--text);font-size:.8rem}
+.sidebar-menu{list-style:none;padding:0 .75rem}
+.sidebar-item{margin-bottom:.3rem}
+.sidebar-link{display:block;padding:.5rem .85rem;color:var(--text);text-decoration:none;border-radius:4px;transition:all .2s;font-weight:500;font-size:.95rem}
+.sidebar-link:hover{background:var(--light-bg);color:var(--accent)}
+.sidebar-submenu{list-style:none;padding-left:1.25rem;margin-top:.3rem;display:none}
+.sidebar-item:hover .sidebar-submenu{display:block}
+.sidebar-sublink{display:block;padding:.4rem .6rem;color:var(--light-text);text-decoration:none;font-size:.85rem;transition:all .2s;border-radius:4px}
+.sidebar-sublink:hover{color:var(--accent);background:var(--light-bg)}
+.mobile-toggle{display:none;position:fixed;top:.75rem;left:.75rem;z-index:1001;background:var(--primary);color:var(--white);border:none;padding:.6rem .85rem;border-radius:4px;cursor:pointer}
+.main-content{margin-left:var(--sidebar-width);min-height:100vh}
+.hero{background:var(--primary);color:var(--white);padding:0;text-align:center;position:relative;height:500px;overflow:hidden}
+.hero-background{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.hero::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(to bottom,rgba(0,0,0,.3) 0%,rgba(0,0,0,.5) 100%);z-index:2}
+.hero-content{max-width:800px;margin:0 auto;position:relative;z-index:3;padding:0 2rem;height:100%;display:flex;flex-direction:column;justify-content:center}
+.hero h1{font-size:3rem;margin-bottom:.75rem;font-weight:700;text-shadow:0 2px 10px rgba(0,0,0,.3)}
+.hero p{font-size:1.3rem;font-weight:300;text-shadow:0 1px 5px rgba(0,0,0,.3)}
+.container{max-width:1000px;margin:0 auto;padding:2.5rem 2rem}
+section{margin-bottom:2.5rem}
+h2{font-size:1.85rem;color:var(--primary);margin-bottom:1.25rem;padding-bottom:.4rem;font-weight:700;border-bottom:3px solid var(--accent)}
+h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
+.card{background:var(--white);border:2px solid var(--light-bg);border-radius:4px;padding:1.25rem;margin-bottom:1rem}
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:.5rem;top:.5rem;bottom:.5rem;width:2px;background:var(--accent)}
+.timeline-item{position:relative;padding-bottom:1.5rem}
+.timeline-item:last-child{padding-bottom:0}
+.timeline-item::before{content:'';position:absolute;left:-1.55rem;top:.4rem;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--white);box-shadow:0 0 0 2px var(--accent)}
+.timeline-period{font-size:.8rem;font-weight:600;color:var(--accent);margin-bottom:.3rem;text-transform:uppercase}
+.timeline-title{font-size:1rem;font-weight:700;color:var(--primary);margin-bottom:.2rem}
+.timeline-location{font-size:.9rem;color:var(--text);margin-bottom:.3rem}
+.timeline-description{font-size:.85rem;color:var(--light-text);line-height:1.4}
+.timeline-header{display:flex;align-items:start;gap:1rem;margin-bottom:.5rem}
+.timeline-logo{width:40px;height:40px;flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--white);border-radius:4px;padding:.25rem}
+.timeline-logo img{max-width:100%;max-height:100%;object-fit:contain}
+.timeline-content{flex:1}
+.task-block{display:grid;grid-template-columns:1fr 320px;gap:1.5rem;margin-bottom:1.25rem}
+.task-image-wrapper{width:100%;height:240px;overflow:hidden;border-radius:4px;background:var(--light-bg)}
+.task-image{width:100%;height:100%;object-fit:cover}
+.task-block.reverse{grid-template-columns:320px 1fr}
+.task-block.reverse .task-image-wrapper{order:-1}
+.grant-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem}
+.grant-card{background:var(--white);border:2px solid var(--light-bg);border-radius:4px;overflow:hidden;transition:all .2s;cursor:pointer;text-decoration:none;display:block;color:inherit}
+.grant-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.grant-header{background:linear-gradient(135deg,var(--accent) 0%,var(--secondary) 100%);color:var(--white);padding:1rem 1.25rem;text-align:center}
+.grant-date{font-size:1.5rem;font-weight:700;margin-bottom:.25rem}
+.grant-duration{font-size:.8rem;opacity:.9}
+.grant-body{padding:1.25rem}
+.grant-title{font-size:1rem;font-weight:700;color:var(--primary);margin-bottom:.5rem}
+.grant-funder{font-size:.85rem;color:var(--accent);font-weight:600;margin-bottom:.5rem}
+.grant-amount{font-size:.9rem;color:var(--text);font-weight:600}
+.teaching-table{width:100%;border-collapse:collapse;background:var(--white)}
+.teaching-table thead{background:var(--light-bg)}
+.teaching-table th{padding:1rem;text-align:left;font-weight:600;color:var(--primary);border-bottom:2px solid var(--border);font-size:.9rem;text-transform:uppercase}
+.teaching-table td{padding:1rem;border-bottom:1px solid var(--light-bg);font-size:.9rem}
+.teaching-table tbody tr:hover{background:var(--light-bg)}
+.teaching-date{font-weight:700;color:var(--accent);font-size:1rem}
+.teaching-course{font-weight:600;color:var(--primary)}
+.publications-container .card:nth-child(n+6){display:none}
+.publications-container.expanded .card{display:block}
+.publication{border-left:4px solid var(--accent);padding-left:1rem;cursor:pointer;transition:all .2s}
+.publication:hover{border-left-color:var(--primary)}
+.publication-title{font-weight:bold;color:var(--primary);margin-bottom:.3rem;font-size:.95rem}
+.publication-authors{color:var(--light-text);font-style:italic;margin-bottom:.3rem;font-size:.85rem}
+.publication-meta{color:var(--light-text);font-size:.8rem;display:flex;align-items:center;gap:.5rem}
+.talk-item{padding:1rem 0;border-bottom:1px solid var(--border)}
+.talk-item:last-child{border-bottom:none}
+.talk-title{font-weight:600;color:var(--primary);margin-bottom:.3rem;font-size:.95rem}
+.talk-meta{color:var(--light-text);font-size:.85rem;display:flex;align-items:center;gap:.5rem}
+.resources-list{list-style:none;padding:0}
+.resources-list li{padding:1rem;border-bottom:2px solid var(--light-bg)}
+.resources-list li:last-child{border-bottom:none}
+.resource-link{color:var(--accent);text-decoration:none;font-weight:600}
+.supervision-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
+.supervision-card{background:var(--white);border:1px solid var(--border);border-left:4px solid var(--accent);padding:1rem;border-radius:4px;transition:all .2s}
+.supervision-card:hover{box-shadow:0 2px 8px rgba(0,0,0,.08);transform:translateY(-2px)}
+.supervision-name{font-weight:700;color:var(--primary);margin-bottom:.3rem;font-size:.95rem}
+.supervision-topic{font-size:.85rem;color:var(--text);margin-bottom:.3rem;font-style:italic}
+.supervision-period{font-size:.8rem;color:var(--accent);font-weight:600}
+.event-item{background:var(--white);border-left:4px solid var(--accent);padding:1.25rem;margin-bottom:1rem;border-radius:4px;transition:all .2s;display:block;text-decoration:none;color:inherit}
+.event-item:hover{box-shadow:0 2px 8px rgba(0,0,0,.08);transform:translateX(4px);border-left-color:var(--primary)}
+.event-header{display:flex;justify-content:space-between;align-items:start;gap:1rem;margin-bottom:.75rem}
+.event-main{display:flex;gap:1rem;align-items:start;flex:1}
+.event-logo{width:48px;height:48px;flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.event-logo img{max-width:100%;max-height:100%;object-fit:contain}
+.event-info{flex:1}
+.event-title{font-size:1.05rem;font-weight:700;color:var(--primary);margin-bottom:.25rem}
+.event-role{font-size:.85rem;color:var(--accent);font-weight:600}
+.event-date{font-size:.9rem;color:var(--light-text);white-space:nowrap}
+.event-location{font-size:.85rem;color:var(--text);margin-bottom:.5rem}
+.event-description{font-size:.85rem;color:var(--light-text);line-height:1.5}
+.outreach-list{display:flex;flex-direction:column;gap:1rem}
+.outreach-item{background:var(--white);border:2px solid var(--light-bg);border-radius:4px;padding:1.25rem;display:flex;gap:1rem;align-items:start;transition:all .2s;cursor:pointer;text-decoration:none;color:inherit}
+.outreach-item:hover{border-color:var(--accent);transform:translateX(4px);box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.outreach-icon{flex-shrink:0;width:48px;height:48px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.outreach-icon img{max-width:100%;max-height:100%;object-fit:contain}
+.outreach-content{flex:1}
+.outreach-title{font-weight:700;color:var(--primary);margin-bottom:.3rem;font-size:1rem}
+.outreach-source{font-size:.85rem;color:var(--accent);font-weight:600;margin-bottom:.3rem}
+.outreach-date{font-size:.8rem;color:var(--light-text)}
+.section-items .card:nth-child(n+6),.section-items .event-item:nth-child(n+6),.section-items .publication:nth-child(n+6),.section-items .talk-item:nth-child(n+6),.section-items .grant-card:nth-child(n+6),.section-items .supervision-card:nth-child(n+6),.section-items .outreach-item:nth-child(n+6),.section-items .timeline-item:nth-child(n+6),.section-items .teaching-table tbody tr:nth-child(n+6){display:none}
+.section-items.expanded .card,.section-items.expanded .event-item,.section-items.expanded .publication,.section-items.expanded .talk-item,.section-items.expanded .grant-card,.section-items.expanded .supervision-card,.section-items.expanded .outreach-item,.section-items.expanded .timeline-item,.section-items.expanded .teaching-table tbody tr{display:block}
+.section-items.expanded .teaching-table tbody tr{display:table-row}
+.section-items.expanded .grant-card,.section-items.expanded .supervision-card{display:block}
+.show-more-btn{background:var(--light-bg);color:var(--accent);border:2px solid var(--accent);padding:.75rem 1.5rem;border-radius:4px;font-weight:600;font-size:.9rem;cursor:pointer;transition:all .2s;margin:1rem auto;display:block}
+.show-more-btn:hover{background:var(--accent);color:var(--white)}
+.show-more-btn.hidden{display:none}
+@media(max-width:968px){
+.sidebar{transform:translateX(-100%);transition:transform .3s}
+.sidebar.active{transform:translateX(0)}
+.mobile-toggle{display:block}
+.main-content{margin-left:0}
+.hero{height:400px}
+.hero h1{font-size:2rem}
+.task-block,.task-block.reverse{grid-template-columns:1fr}
+.grant-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<button class="mobile-toggle" onclick="document.getElementById('sidebar').classList.toggle('active')">☰</button>
+
+<aside class="sidebar" id="sidebar">
+<div class="sidebar-header">
+<a href="#about" class="sidebar-logo">Research</a>
+<p class="sidebar-tagline">NLP for historical languages</p>
+<div class="sidebar-social">
+<a href="#" class="social-link"><i class="fab fa-orcid"></i></a>
+<a href="#" class="social-link"><i class="fab fa-github"></i></a>
+<a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+<a href="#" class="social-link" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+<a href="#" class="social-link" title="HAL"><span style="font-weight:700;font-size:.9rem">HAL</span></a>
+<a href="#" class="social-link" title="Institutional Page"><i class="fas fa-university"></i></a>
+<a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+</div>
+<div class="sidebar-contact">
+<p><strong>Address:</strong> University, City, Country</p>
+</div>
+</div>
+<ul class="sidebar-menu">
+<li class="sidebar-item"><a href="#about" class="sidebar-link">About</a></li>
+<li class="sidebar-item">
+<a href="#cv" class="sidebar-link">CV</a>
+<ul class="sidebar-submenu">
+<li><a href="#education" class="sidebar-sublink">Education</a></li>
+<li><a href="#experience" class="sidebar-sublink">Experience</a></li>
+</ul>
+</li>
+<li class="sidebar-item">
+<a href="#projects" class="sidebar-link">Projects</a>
+<ul class="sidebar-submenu">
+<li><a href="#lemmatization" class="sidebar-sublink">Lemmatisation</a></li>
+<li><a href="#normalization" class="sidebar-sublink">Normalisation</a></li>
+<li><a href="#ner" class="sidebar-sublink">NER</a></li>
+</ul>
+</li>
+<li class="sidebar-item">
+<a href="#publications" class="sidebar-link">Publications</a>
+<ul class="sidebar-submenu">
+<li><a href="#journals" class="sidebar-sublink">Journals</a></li>
+<li><a href="#proceedings" class="sidebar-sublink">Proceedings</a></li>
+</ul>
+</li>
+<li class="sidebar-item"><a href="#resources" class="sidebar-link">Resources</a></li>
+<li class="sidebar-item"><a href="#talks" class="sidebar-link">Talks</a></li>
+<li class="sidebar-item"><a href="#grants" class="sidebar-link">Grants</a></li>
+<li class="sidebar-item"><a href="#teaching" class="sidebar-link">Teaching</a></li>
+<li class="sidebar-item">
+<a href="#supervision" class="sidebar-link">Supervision</a>
+<ul class="sidebar-submenu">
+<li><a href="#students" class="sidebar-sublink">Students</a></li>
+<li><a href="#interns" class="sidebar-sublink">Interns</a></li>
+</ul>
+</li>
+<li class="sidebar-item"><a href="#outreach" class="sidebar-link">Outreach</a></li>
+<li class="sidebar-item">
+<a href="#events" class="sidebar-link">Event Organization</a>
+<ul class="sidebar-submenu">
+<li><a href="#conferences" class="sidebar-sublink">Conferences</a></li>
+<li><a href="#workshops" class="sidebar-sublink">Workshops & Courses</a></li>
+</ul>
+</li>
+</ul>
+</aside>
+
+<div class="main-content">
+<section class="hero">
+<img src="IMG_0798.jpeg" alt="Hero" class="hero-background">
+<div class="hero-content">
+<h1>Your Research Project</h1>
+<p>NLP research initiative</p>
+</div>
+</section>
+
+<div class="container">
+<section id="about">
+<h2>About</h2>
+<div class="card"><p>Research project description...</p></div>
+</section>
+
+<section id="cv">
+<h2>Curriculum Vitae</h2>
+<div id="education">
+<h3>Education</h3>
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-period">2020 - 2024</div>
+<div class="timeline-header">
+<div class="timeline-logo">
+<img src="https://via.placeholder.com/40x40/1a3a52/FFFFFF?text=UNIGE" alt="University of Geneva">
+</div>
+<div class="timeline-content">
+<div class="timeline-title">PhD in Computational Linguistics</div>
+<div class="timeline-location">University of Geneva 🇨🇭</div>
+</div>
+</div>
+<div class="timeline-description">Thesis on historical NLP</div>
+</div>
+</div>
+<div id="experience">
+<h3>Experience</h3>
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-period">2024 - Present</div>
+<div class="timeline-header">
+<div class="timeline-logo">
+<img src="https://via.placeholder.com/40x40/1a3a52/FFFFFF?text=UNIGE" alt="University of Geneva">
+</div>
+<div class="timeline-content">
+<div class="timeline-title">Postdoctoral Researcher</div>
+<div class="timeline-location">University of Geneva 🇨🇭</div>
+</div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-period">2024 - Present</div>
+<div class="timeline-header">
+<div class="timeline-logo">
+<img src="https://via.placeholder.com/40x40/1a3a52/FFFFFF?text=UNIGE" alt="University of Geneva">
+</div>
+<div class="timeline-content">
+<div class="timeline-title">Postdoctoral Researcher</div>
+<div class="timeline-location">University of Geneva 🇨🇭</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+<div id="lemmatization">
+<h3>Lemmatisation</h3>
+<div class="task-block">
+<div class="card"><p>Lemmatisation system...</p></div>
+<div class="task-image-wrapper">
+<img src="https://via.placeholder.com/320x240" alt="Project" class="task-image">
+</div>
+</div>
+</div>
+</section>
+
+<section id="publications">
+<h2>Publications</h2>
+<div id="jourals">
+<h3>Journals</h3>
+<div class="publications-container section-items">
+<div class="card publication" onclick="window.open('#','_blank')">
+<div class="publication-title">Multilingual NER Study</div>
+<div class="publication-authors">Johnson, Lee, Doe</div>
+<div class="publication-meta"><span>Journal 2023</span></div>
+</div>
+<div class="card publication" onclick="window.open('#','_blank')">
+<div class="publication-title">Multilingual NER Study</div>
+<div class="publication-authors">Johnson, Lee, Doe</div>
+<div class="publication-meta"><span>Journal 2023</span></div>
+</div>
+<div class="card publication" onclick="window.open('#','_blank')">
+<div class="publication-title">Multilingual NER Study</div>
+<div class="publication-authors">Johnson, Lee, Doe</div>
+<div class="publication-meta"><span>Journal 2023</span></div>
+</div>
+<div class="card publication" onclick="window.open('#','_blank')">
+<div class="publication-title">Multilingual NER Study</div>
+<div class="publication-authors">Johnson, Lee, Doe</div>
+<div class="publication-meta"><span>Journal 2023</span></div>
+</div>
+<div class="card publication" onclick="window.open('#','_blank')">
+<div class="publication-title">Multilingual NER Study</div>
+<div class="publication-authors">Johnson, Lee, Doe</div>
+<div class="publication-meta"><span>Journal 2023</span></div>
+</div>
+<div class="card publication" onclick="window.open('#','_blank')">
+<div class="publication-title">Multilingual NER Study</div>
+<div class="publication-authors">Johnson, Lee, Doe</div>
+<div class="publication-meta"><span>Journal 2023</span></div>
+</div>
+<div class="card publication" onclick="window.open('#','_blank')">
+<div class="publication-title">Multilingual NER Study</div>
+<div class="publication-authors">Johnson, Lee, Doe</div>
+<div class="publication-meta"><span>Journal 2023</span></div>
+</div>
+<div class="card publication" onclick="window.open('#','_blank')">
+<div class="publication-title">Multilingual NER Study</div>
+<div class="publication-authors">Johnson, Lee, Doe</div>
+<div class="publication-meta"><span>Journal 2023</span></div>
+</div>
+</div>
+<button class="show-more-btn" onclick="toggleShowMore(this)">Show 1 more</button>
+</div>
+
+
+
+<div id="proceedings">
+<h3>Proceedings</h3>
+<div class="publications-container section-items">
+<div class="card publication" onclick="window.open('#','_blank')">
+<div class="publication-title">Lemmatisation Techniques</div>
+<div class="publication-authors">Doe, Smith</div>
+<div class="publication-meta"><span>🇩🇪</span><span>COLING 2024</span></div>
+</div>
+<div class="card publication" onclick="window.open('#','_blank')">
+<div class="publication-title">Lemmatisation Techniques</div>
+<div class="publication-authors">Doe, Smith</div>
+<div class="publication-meta"><span>🇩🇪</span><span>COLING 2024</span></div>
+</div>
+<div class="card publication" onclick="window.open('#','_blank')">
+<div class="publication-title">Lemmatisation Techniques</div>
+<div class="publication-authors">Doe, Smith</div>
+<div class="publication-meta"><span>🇩🇪</span><span>COLING 2024</span></div>
+</div>
+<div class="card publication" onclick="window.open('#','_blank')">
+<div class="publication-title">Lemmatisation Techniques</div>
+<div class="publication-authors">Doe, Smith</div>
+<div class="publication-meta"><span>🇩🇪</span><span>COLING 2024</span></div>
+</div>
+<div class="card publication" onclick="window.open('#','_blank')">
+<div class="publication-title">Lemmatisation Techniques</div>
+<div class="publication-authors">Doe, Smith</div>
+<div class="publication-meta"><span>🇩🇪</span><span>COLING 2024</span></div>
+</div>
+<div class="card publication" onclick="window.open('#','_blank')">
+<div class="publication-title">Lemmatisation Techniques</div>
+<div class="publication-authors">Doe, Smith</div>
+<div class="publication-meta"><span>🇩🇪</span><span>COLING 2024</span></div>
+</div>
+<div class="card publication" onclick="window.open('#','_blank')">
+<div class="publication-title">Lemmatisation Techniques</div>
+<div class="publication-authors">Doe, Smith</div>
+<div class="publication-meta"><span>🇩🇪</span><span>COLING 2024</span></div>
+</div>
+</div>
+<button class="show-more-btn" onclick="toggleShowMore(this)">Show 1 more</button>
+</div>
+</section>
+
+<section id="resources">
+<h2>Resources</h2>
+<div class="card">
+<ul class="resources-list">
+<li><a href="#" class="resource-link">Dataset: Lemmatisation Corpus</a>
+<p style="margin-top:.5rem;color:#666">Annotated text in 20 languages</p></li>
+</ul>
+</div>
+</section>
+
+<section id="talks">
+<h2>Talks</h2>
+<div class="card">
+<div class="talk-item">
+<div class="talk-title">Advanced NLP Techniques</div>
+<div class="talk-meta"><span>🇫🇷</span><span>Paris, June 2024</span></div>
+</div>
+</div>
+</section>
+
+<section id="grants">
+<h2>Grants & Funding</h2>
+<div class="grant-grid">
+<a href="https://snsf.ch/grant-url" target="_blank" class="grant-card">
+<div class="grant-header">
+<div class="grant-date">2024-2027</div>
+<div class="grant-duration">3 years</div>
+</div>
+<div class="grant-body">
+<div class="grant-title">Advanced NLP for Historical Languages</div>
+<div class="grant-funder">Swiss National Science Foundation</div>
+<div class="grant-amount">CHF 450,000</div>
+</div>
+</a>
+</div>
+</section>
+
+<section id="teaching">
+<h2>Teaching</h2>
+<div class="card" style="padding:0;overflow-x:auto">
+<table class="teaching-table">
+<thead>
+<tr>
+<th>Period</th>
+<th>Course</th>
+<th>Level</th>
+<th>Institution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="teaching-date">Spring 2024</td>
+<td class="teaching-course">Natural Language Processing</td>
+<td>Master</td>
+<td>University of Geneva</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="supervision">
+<h2>Supervision</h2>
+<div id="students">
+<h3>Students</h3>
+<div class="supervision-grid">
+<div class="supervision-card">
+<div class="supervision-name">Alice Martin</div>
+<div class="supervision-topic">PhD: Neural models for historical text</div>
+<div class="supervision-period">2023 - Present</div>
+</div>
+</div>
+</div>
+<div id="interns">
+<h3>Interns</h3>
+<div class="supervision-grid">
+<div class="supervision-card">
+<div class="supervision-name">David Kim</div>
+<div class="supervision-topic">Text normalisation pipeline</div>
+<div class="supervision-period">Summer 2024</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="events">
+<h2>Event Organization</h2>
+<div id="conferences">
+<h3>Conferences</h3>
+<div class="card">
+<a href="https://example.com/conference" target="_blank" class="event-item">
+<div class="event-header">
+<div class="event-main">
+<div class="event-logo">
+<img src="https://via.placeholder.com/48x48/1a3a52/FFFFFF?text=ICHNLP" alt="Conference logo">
+</div>
+<div class="event-info">
+<div class="event-title">International Conference on Historical NLP</div>
+<div class="event-role">Program Committee Chair</div>
+</div>
+</div>
+<div class="event-date">June 2025</div>
+</div>
+<div class="event-location">📍 Geneva, Switzerland • 200+ participants</div>
+<div class="event-description">Leading the program committee for this major conference on computational approaches to historical texts.</div>
+</a>
+</div>
+</div>
+
+<div id="workshops">
+<h3>Workshops & Intensive Courses</h3>
+<div class="card">
+<a href="https://example.com/workshop1" target="_blank" class="event-item">
+<div class="event-header">
+<div class="event-main">
+<div class="event-logo">
+<img src="https://via.placeholder.com/48x48/5a9bd4/FFFFFF?text=WS" alt="Workshop logo">
+</div>
+<div class="event-info">
+<div class="event-title">Advanced Methods in Text Lemmatisation</div>
+<div class="event-role">Co-organizer</div>
+</div>
+</div>
+<div class="event-date">Sept 2024</div>
+</div>
+<div class="event-location">📍 University of Lausanne • 3 days • 25 participants</div>
+<div class="event-description">Hands-on workshop on state-of-the-art lemmatisation techniques for historical languages.</div>
+</a>
+
+<div class="event-item" style="cursor:default">
+<div class="event-header">
+<div class="event-main">
+<div class="event-logo">
+<img src="https://via.placeholder.com/48x48/2c5f7f/FFFFFF?text=SS" alt="Summer school logo">
+</div>
+<div class="event-info">
+<div class="event-title">Introduction to NLP for Historians</div>
+<div class="event-role">Summer School Organizer</div>
+</div>
+</div>
+<div class="event-date">July 2024</div>
+</div>
+<div class="event-location">📍 Geneva • 1 week • 40 participants</div>
+<div class="event-description">Week-long summer school introducing humanities scholars to computational text analysis.</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="outreach">
+<h2>Outreach</h2>
+<div class="outreach-list">
+<a href="https://example.com/article1" target="_blank" class="outreach-item">
+<div class="outreach-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Le_Monde.svg" alt="Nom du média"></div>
+<div class="outreach-content">
+<div class="outreach-title">AI Uncovers Secrets in Historical French Texts</div>
+<div class="outreach-source">Le Monde</div>
+<div class="outreach-date">December 2024</div>
+</div>
+</a>
+</div>
+</section>
+
+</div>
+</div>
+<script>
+function toggleShowMore(btn) {
+  const container = btn.previousElementSibling;
+  const allItems = container.querySelectorAll('.card');
+  const hiddenCount = allItems.length - 5;
+  
+  container.classList.toggle('expanded');
+  
+  if (container.classList.contains('expanded')) {
+    btn.textContent = 'Show less';
+  } else {
+    btn.textContent = hiddenCount > 1 ? `Show ${hiddenCount} more` : 'Show 1 more';
+  }
+}
+
+// Initialiser les boutons au chargement
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.show-more-btn').forEach(btn => {
+    const container = btn.previousElementSibling;
+    const allItems = container.querySelectorAll('.card');
+    const hiddenCount = allItems.length - 5;
+    
+    if (hiddenCount > 0) {
+      btn.textContent = hiddenCount > 1 ? `Show ${hiddenCount} more` : 'Show 1 more';
+    } else {
+      btn.style.display = 'none';
+    }
+  });
+});
+</script>
+</body>
+</html>
