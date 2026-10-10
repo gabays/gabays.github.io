@@ -3,12 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CV Site</title>
+<title>Simon Gabay – (Computational) Philologist</title>
+<meta name="description" content="Simon Gabay, assistant professor in computational philology at the University of Geneva. Early modern French philology, NLP, automatic text recognition.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 :root{--primary:#1a3a52;--secondary:#2c5f7f;--accent:#5a9bd4;--text:#2c3e50;--light-text:#7f8c8d;--light-bg:#ecf2f7;--white:#fff;--border:#d4dfe8;--sidebar-width:280px}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;line-height:1.4;color:var(--text);background:#f5f8fa}
 .sidebar{position:fixed;left:0;top:0;width:var(--sidebar-width);height:100vh;background:var(--white);border-right:2px solid var(--light-bg);padding:1.25rem 0;overflow-y:auto;z-index:1000}
@@ -33,7 +35,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-s
 .main-content{margin-left:var(--sidebar-width);min-height:100vh}
 .hero{background:var(--primary);color:var(--white);padding:0;text-align:center;position:relative;height:500px;overflow:hidden}
 .hero-background{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1}
-.hero::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(to bottom,rgba(0,0,0,.3) 0%,rgba(0,0,0,.5) 100%);z-index:2}
+.hero::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(to bottom,rgba(0,0,0,.1) 0%,rgba(0,0,0,.3) 100%);z-index:2}
 .hero-content{max-width:800px;margin:0 auto;position:relative;z-index:3;padding:0 2rem;height:100%;display:flex;flex-direction:column;justify-content:center}
 .hero h1{font-size:3rem;margin-bottom:.75rem;font-weight:700;text-shadow:0 2px 10px rgba(0,0,0,.3)}
 .hero p{font-size:1.3rem;font-weight:300;text-shadow:0 1px 5px rgba(0,0,0,.3)}
@@ -77,15 +79,11 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 .teaching-table tbody tr:hover{background:var(--light-bg)}
 .teaching-date{font-weight:700;color:var(--accent);font-size:1rem}
 .teaching-course{font-weight:600;color:var(--primary)}
-.publications-container .card:nth-child(n+6){display:none}
-.publications-container.expanded .card{display:block}
 .publication{border-left:4px solid var(--accent);padding-left:1rem;cursor:pointer;transition:all .2s}
 .publication:hover{border-left-color:var(--primary)}
 .publication-title{font-weight:bold;color:var(--primary);margin-bottom:.3rem;font-size:.95rem}
 .publication-authors{color:var(--light-text);margin-bottom:.3rem;font-size:.85rem}
 .publication-meta{color:var(--light-text);font-size:.8rem;display:flex;align-items:center;gap:.5rem}
-.year-group {margin-bottom: 2.5rem;}
-.year-label {font-family: 'DM Mono', monospace;font-size: 0.75rem;font-weight: 500;letter-spacing: 0.15em;color: var(--accent);text-transform:uppercase;margin-bottom: 0.75rem;padding-bottom: 0.4rem;border-bottom: 1px solid var(--rule);}
 .talk-item{padding:1rem 0;border-bottom:1px solid var(--border)}
 .talk-item:last-child{border-bottom:none}
 .talk-title{font-weight:600;color:var(--primary);margin-bottom:.3rem;font-size:.95rem}
@@ -154,7 +152,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
             <a href="https://scholar.google.com/citations?user=7MymdvIAAAAJ" target="_blank" class="social-link" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
             <a href="https://cv.hal.science/simon-gabay" target="_blank" class="social-link" title="HAL"><span style="font-weight:700;font-size:.9rem">HAL</span></a>
             <a href="https://www.unige.ch/lettres/humanites-numeriques/equipe/collaborateurs/simon-gabay" target="_blank" class="social-link" title="Institutional Page"><i class="fas fa-university"></i></a>
-            <a href="/cdn-cgi/l/email-protection#13607a7e7c7d3d747271726a53667d7a74763d707b" class="social-link"><i class="fas fa-envelope"></i></a>
+            <a href="mailto:simon.gabay@unige.ch" class="social-link" title="Email"><i class="fas fa-envelope"></i></a>
         </div>
         <div class="sidebar-contact">
             <p><strong>Address:</strong> Department of Digital Humanities, University of Geneva, Switzerland</p>
@@ -194,6 +192,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
             <a href="#supervision" class="sidebar-link">Supervision</a>
             <ul class="sidebar-submenu">
                 <li><a href="#students" class="sidebar-sublink">PhD</a></li>
+                <li><a href="#external" class="sidebar-sublink">PhD (External examiner)</a></li>
                 <li><a href="#certificate" class="sidebar-sublink">DH Certificate</a></li>
                 <li><a href="#master" class="sidebar-sublink">Master</a></li>
                 <li><a href="#interns" class="sidebar-sublink">Interns</a></li>
@@ -204,10 +203,10 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
             <ul class="sidebar-submenu">
                 <li><a href="#conferences" class="sidebar-sublink">Conferences</a></li>
                 <li><a href="#seminars" class="sidebar-sublink">Seminars</a></li>
-                <li><a href="#workshops" class="sidebar-sublink">Workshops & Courses</a></li>
+                <li><a href="#workshops" class="sidebar-sublink">Workshops &amp; Courses</a></li>
             </ul>
-            <li class="sidebar-item"><a href="#outreach" class="sidebar-link">Outreach</a></li>
         </li>
+        <li class="sidebar-item"><a href="#outreach" class="sidebar-link">Outreach</a></li>
     </ul>
 </aside>
 
@@ -225,7 +224,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 <h2>About</h2>
 <div class="card">
     <p>I am an assistant professor in computational humanities at the University of Geneva, where I lead the <a href="https://freem-corpora.github.io" target="_blank" rel="noopener">FreEM project</a> (resources and applications for Classical French) and <a href="https://fondue.unige.ch" target="_blank" rel="noopener">FoNDUE</a> (information extraction from historical documents). I joined the university in 2020 as a research and teaching fellow (Maître-assistant) in the chair of Digital Humanities.</p>
-    <p>After studying at Paris-Sorbonne (Paris IV) and the University of St Andrews, I wrote my doctoral dissertation in Latin philology at the University of Amsterdam (UvA) on the history of the stage actor in the Middle Ages. For my postdoctoral work, I turned to computational philology as part of a Swiss National Science Foundation (SNSF) project on Sévigné's manuscripts at the University of Neuchâtel, where I created the first digital humanities courses. I also directed the <a href="https://katabase.huma-num.fr" target="_blank" rel="noopener">Katabase</a> project (study of the manuscript market in the late nineteenth century) and <a href="https://gallicorpora.github.io" target="_blank" rel="noopener">Galli(corpor)a</a> (development of tools for the layout and structural analysis of historical documents from Gallica).</p>
+    <p>After studying at Paris-Sorbonne (Paris IV) and the University of St Andrews, I wrote my doctoral dissertation in Latin philology at the University of Amsterdam (UvA) on the history of the stage actor in the Middle Ages. For my postdoctoral work, I turned to computational philology as part of a Swiss National Science Foundation (SNSF) project on Sévigné's manuscripts at the University of Neuchâtel, where I created the first digital humanities courses. I also directed the <a href="https://katabase.huma-num.fr" target="_blank" rel="noopener">Katabase</a> project (study of the manuscript market in the late nineteenth century) and <a href="https://gallicorpora.github.io" target="_blank" rel="noopener">Gallic(orpor)a</a> (development of tools for the layout and structural analysis of historical documents from Gallica).</p>
     <p>My main research areas are early modern French philology, history of philology, seventeenth-century French literature, natural language processing, and automatic text recognition.</p>
     <p>My open-access publications are <a href="https://cv.archives-ouvertes.fr/simon-gabay" target="_blank" rel="noopener">available on HAL</a>.</p>
 </div>
@@ -272,6 +271,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 		<div class="timeline-content">
 		<div class="timeline-title">Postdoctoral Researcher</div>
 		<div class="timeline-location">University of Neuchâtel</div>
+		</div>
 		</div>
 	</div>
 	</div>
@@ -332,7 +332,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 		<div class="timeline-description">French literature and linguistics</div>
 	</div>
 </div>
-
+</div>
 </section>
 
 <section id="projects">
@@ -349,9 +349,9 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 	</div>
 	</div>
 </div>
-<div id="gallicorpora" onclick="window.open('https://gallicorpora.github.io','_blank')">
+<div id="gallicorpora">
 	<h3>Gallic(orpor)a</h3>
-	<div class="task-block">
+	<div class="task-block" onclick="window.open('https://gallicorpora.github.io','_blank')">
 	<div class="card">
 		<p>The Gallic(orpor)a project develops a pipeline for mass digitisation of historical documents. It focuses on French documents written between the 15th and the 18th centuries, may they be manuscripts, incunabula or prints. The project addresses three main tasks: document layout analysis, handwritten text recognition and linguistic annotation (lemmata, POS tags and morphology).</p>
 	</div>
@@ -364,7 +364,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 	<h3>Katabase</h3>
 	<div class="task-block" onclick="window.open('https://katabase.huma-num.fr','_blank')">
 	<div class="card">
-		<p>this project is at the junction of romance philology and computer science: by combining the needs of the first with the possibilities offered by the second, we plan to explore our capacity to automatically extract, structure and annotate sale catalogues to create a database of sold manuscripts in Paris since the beginning of the 19th c. Data will also be automatically analysed to identify same manuscripts sold mulptiple times over time, and reconstruct the history of manuscripts.</p>
+		<p>This project is at the junction of romance philology and computer science: by combining the needs of the first with the possibilities offered by the second, we plan to explore our capacity to automatically extract, structure and annotate sale catalogues to create a database of sold manuscripts in Paris since the beginning of the 19th c. Data will also be automatically analysed to identify same manuscripts sold multiple times over time, and reconstruct the history of manuscripts.</p>
 	</div>
 	<div class="task-image-wrapper">
 	<img src="images/kata_graph.png" alt="Project" class="task-image">
@@ -381,9 +381,9 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 
 <div id="articles">
 <h3>Articles/Book sections</h3>
-<div class="publications-container section-items">
+<div class="section-items">
     <div class="card publication" onclick="window.open('','_blank')">
-        <div class="publication-title">Le projet CATMuS: les langues d’europe occidentale en alphabet latin</div>
+        <div class="publication-title">Le projet CATMuS: les langues d’Europe occidentale en alphabet latin</div>
         <div class="publication-authors">Simon Gabay, Matthias Gille Levenson, Olivier Brisville-Fertin, Malamatenia Vlachou-Efstathiou</div>
         <div class="publication-meta"><span><i>Apprendre à Lire aux Machines</i>, Presses universitaires de Caen, 2026</span></div>
     </div>    
@@ -397,7 +397,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
         <div class="publication-authors">Simon Gabay</div>
         <div class="publication-meta"><span><i>Revue d'histoire littéraire de la France</i> 126 (2) | 2026</span></div>
     </div>
-    <div class="card publication" onclick="window.open('http://hal.science/hal-05454714','_blank')">
+    <div class="card publication" onclick="window.open('','_blank')">
         <div class="publication-title">Sévigné, à la lettre. Pour une lecture littérale des manuscrits de la correspondance</div>
         <div class="publication-authors">Simon Gabay</div>
         <div class="publication-meta"><span><i>Dix-septième siècle</i> 313 | 2026</span></div>
@@ -443,7 +443,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 		<div class="publication-meta"><span><i>Linx</i> 85 | 2022</span></div>
 	</div>
 	<div class="card publication" onclick="window.open('https://hal.science/hal-01907239v2','_blank')">
-		<div class="publication-title">Éditer le Grand Siècle au XIX e s. Remarques sur les choix (ortho)graphiques de quelques éditeurs</div>
+		<div class="publication-title">Éditer le Grand Siècle au XIXe s. Remarques sur les choix (ortho)graphiques de quelques éditeurs</div>
 		<div class="publication-authors">Simon Gabay</div>
 		<div class="publication-meta"><span><i>Actes du XXIXe Congrès international de linguistique et de philologie romanes</i> 2021</span></div>
 	</div>
@@ -503,13 +503,13 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 		<div class="publication-meta"><span><i>Questes : revue pluridisciplinaire d’études médiévales</i> 18 | 2010</span></div>
 	</div>
 </div>
-<button class="show-more-btn" onclick="toggleShowMore(this)">Show 1 more</button>
+<button class="show-more-btn" onclick="toggleShowMore(this)">Show more</button>
 </div>
 
 
 <div id="papers">
 <h3>Proceedings papers</h3>
-<div class="publications-container section-items">
+<div class="section-items">
     <div class="card publication" onclick="window.open('','_blank')">
         <div class="publication-title">Extended Overview of HIPE-2026: Evaluating Accurate and Efficient Person-Place Relation Extraction from Multilingual Historical Texts HIPE at CLEF 2026</div>
         <div class="publication-authors">Juri Opitz, Maud Ehrmann, Corina Raclé, Andrianos Michail, Matteo Romanello, Emanuela Boros, Simon Gabay, Simon Clematide</div>
@@ -527,7 +527,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
     </div>    
     <div class="card publication" onclick="window.open('https://doi.org/10.63317/5pjzh8ma5v76','_blank')">
         <div class="publication-title">CoMMA, a Large-scale Corpus of Multilingual Medieval Archives</div>
-        <div class="publication-authors">Thibault Clérice, Simon Gabay, Malamatenia Vlachou-Efsthatiou, Ariane Pinche, Benoît Sagot</div>
+        <div class="publication-authors">Thibault Clérice, Simon Gabay, Malamatenia Vlachou-Efstathiou, Ariane Pinche, Benoît Sagot</div>
         <div class="publication-meta"><span>🇪🇸</span><span>Proceedings of the Fifteenth Language Resources and Evaluation Conference (LREC 2026)</span></div>
     </div>
     <div class="card publication" onclick="window.open('https://hal.science/hal-05638101','_blank')">
@@ -550,7 +550,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 		<div class="publication-authors">Florian Cafiero, Lucence Ing, Simon Gabay, Thibault Clérice</div>
 		<div class="publication-meta"><span>🇱🇺</span><span>CHR 2025</span></div>
 	</div>
-	<div class="card publication" onclick="window.open('AJOUTER','_blank')">
+	<div class="card publication" onclick="window.open('https://doi.org/10.1109/IEEE-CH65308.2025.11279315','_blank')">
 		<div class="publication-title">Predicting the Fictional Time and Space of French Theatre Plays by Using Large Language Models</div>
 		<div class="publication-authors">Matteo Romanello, Simon Gabay, Nicola Carboni</div>
 		<div class="publication-meta"><span>🇮🇹</span><span>Cyber Humanities 2025</span></div>
@@ -570,17 +570,17 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 		<div class="publication-authors">Florian Raphaël Cafiero, Juan Barrios Rudloff, Simon Gabay</div>
 		<div class="publication-meta"><span>🇮🇹</span><span>RaPID-5@LREC-COLING-2024</span></div>
 	</div>
-	<div class="card publication" onclick="window.open('https://hal.science/HUMANISTICA-2024/hal-04555002v1','_blank')">
+	<div class="card publication" onclick="window.open('https://hal.science/HUMANISTICA-2024/hal-04555002','_blank')">
 		<div class="publication-title">Océriser les imprimés du XVIe siècle en langue française : le cas d'un corpus romand en caractères gothiques</div>
 		<div class="publication-authors">Sonia Solfrini, Simon Gabay, Maxime Humeau, Ariane Pinche, Pierre-Olivier Beaulnes, et al.</div>
 		<div class="publication-meta"><span>🇲🇦</span><span>Humanistica 2024</span></div>
 	</div>
-	<div class="card publication" onclick="window.open('https://hal.science/HUMANISTICA-2024/hal-04555002v1','_blank')">
+	<div class="card publication" onclick="window.open('https://hal.science/HUMANISTICA-2024/hal-04559418','_blank')">
 		<div class="publication-title">Espionner les espions : cartographier les représentants des puissances étrangères à Paris d’après les rapports de police du XVIIIe siècle</div>
 		<div class="publication-authors">Yvan Jauregui, Simon Gabay</div>
 		<div class="publication-meta"><span>🇲🇦</span><span>Humanistica 2024</span></div>
 	</div>
-	<div class="card publication" onclick="window.open('https://hal.science/HUMANISTICA-2024/hal-04555002v1','_blank')">
+	<div class="card publication" onclick="window.open('https://hal.science/HUMANISTICA-2024/hal-04557457','_blank')">
 		<div class="publication-title">Reconnaissance des écritures dans les imprimés. CATMuS print : un modèle générique, multilingue et diachronique</div>
 		<div class="publication-authors">Simon Gabay, Thibault Clérice, Pauline Jacsont, Elina Leblanc, Marie Jeannot-Tirole, et al.</div>
 		<div class="publication-meta"><span>🇲🇦</span><span>Humanistica 2024</span></div>
@@ -595,7 +595,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 		<div class="publication-authors">Thibault Clérice, Ariane Pinche, Malamatenia Vlachou-Efstathiou, Alix Chagué, Jean-Baptiste Camps, et al.</div>
 		<div class="publication-meta"><span>🇬🇷</span><span>ICDAR 2024</span></div>
 	</div>
-	<div class="card publication" onclick="window.open('https://dx.doi.org/10.1007/978-3-031-70543-4_11','_blank')">
+	<div class="card publication" onclick="window.open('https://hal.science/hal-04246051','_blank')">
 		<div class="publication-title">Detecting Psychological Disorders with Stylometry</div>
 		<div class="publication-authors">Juan Barrios Rudloff, Simon Gabay, Florian Cafiero, Martin Debbané</div>
 		<div class="publication-meta"><span>🇫🇷</span><span>CHR 2023</span></div>
@@ -630,12 +630,12 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 		<div class="publication-authors">Anna Scius Bertrand, Simon Gabay, Ljudmila Petkovic, Juliette Janes, Caroline Corbières and Thibault Clérice</div>
 		<div class="publication-meta"><span>🇨🇭</span><span>HIP@ICDAR21</span></div>
 	</div>
-	<div class="card publication" onclick="window.open('https://hal.science/hal-03402994v1','_blank')">
+	<div class="card publication" onclick="window.open('https://hal.science/hal-03402994','_blank')">
 		<div class="publication-title">Beyond Idiolectometry? On Racine's Stylometric Signature</div>
 		<div class="publication-authors">Simon Gabay</div>
 		<div class="publication-meta"><span>🇳🇱</span><span>CHR 2021</span></div>
 	</div>
-	<div class="card publication" onclick="window.open('https://hal.science/hal-03402994v1','_blank')">
+	<div class="card publication" onclick="window.open('https://hal.science/hal-02388407','_blank')">
 		<div class="publication-title">Selling autograph manuscripts in 19th c. Paris: digitising the Revue des Autographes</div>
 		<div class="publication-authors">Simon Gabay, Lucie Rondeau Du Noyer, Mohamed Khemakhem</div>
 		<div class="publication-meta"><span>🇮🇹</span><span>AIUCD 2020</span></div>
@@ -656,18 +656,17 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 		<div class="publication-meta"><span>🇹🇳 Hammamet</span><span>DTUC 2020</span></div>
 	</div>
 	<div class="card publication" onclick="window.open('https://dx.doi.org/10.1145/3371140.3371146','_blank')">
-		<div class="publication-title">A Theatre of Places: Mapping 17 th French Theatre</div>
+		<div class="publication-title">A Theatre of Places: Mapping 17th French Theatre</div>
 		<div class="publication-authors">Simon Gabay, Giovanni Pietro Vitali</div>
 		<div class="publication-meta"><span>🇫🇷 Lyon, France</span><span>GIR 2019</span></div>
 	</div>
 </div>
-<button class="show-more-btn" onclick="toggleShowMore(this)">Show 1 more</button>
+<button class="show-more-btn" onclick="toggleShowMore(this)">Show more</button>
 </div>
-</section>
 
 <div id="proceedings">
 <h3>Proceedings</h3>
-<div class="publications-container section-items">
+<div class="section-items">
     <div class="card publication" onclick="window.open('https://hal.science/HUMANISTICA-2026','_blank')">
         <div class="publication-title">Recueil des communications du 7e colloque Humanistica</div>
         <div class="publication-authors">Serena Crespi, Simon Gabay, Martin Grandjean, Ariane Pinche, Marie Purenet, Léa Saint-Raymond</div>
@@ -689,13 +688,12 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 		<div class="publication-meta"><span>🇨🇭 Neuchâtel, Switzerland</span><span> DARIAH-DESIR workshop</span></div>
 	</div>
 </div>
-<button class="show-more-btn" onclick="toggleShowMore(this)">Show 1 more</button>
+<button class="show-more-btn" onclick="toggleShowMore(this)">Show more</button>
 </div>
-</section>
 
 <div id="abstracts">
 <h3>Abstracts/short proceedings papers</h3>
-<div class="publications-container section-items">
+<div class="section-items">
     <div class="card publication" onclick="window.open('','_blank')">
         <div class="publication-title">Unlocking a New Data Source: Digitising Manuscript Medical Records</div>
         <div class="publication-authors">Simon Gabay, Justine Falciola, Laurence Toutous Trellu, Myriam Lamrayah</div>
@@ -714,12 +712,12 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 	<div class="card publication" onclick="window.open('https://hal.science/hal-04984105v1','_blank')">
 		<div class="publication-title">The times are a-changin': présent vs passé simple in French novels (1811-2024)</div>
 		<div class="publication-authors">Simon Gabay, Jean Barré, Florian Cafiero</div>
-		<div class="publication-meta"><span>🇳🇱</span><span>Dh Benelux 2025</span></div>
+		<div class="publication-meta"><span>🇳🇱</span><span>DH Benelux 2025</span></div>
 	</div>
-	<div class="card publication" onclick="window.open('https://hal.science/hal-04569687v1','_blank')">
+	<div class="card publication" onclick="window.open('https://hal.science/hal-04569687','_blank')">
 		<div class="publication-title">Assessing collaborative writing. A stylometric study of Manchette’s and Bastid’s co-written novel</div>
 		<div class="publication-authors">Sophie Dolto, Simon Gabay</div>
-		<div class="publication-meta"><span>🇧🇪</span><span>Dh Benelux 2024</span></div>
+		<div class="publication-meta"><span>🇧🇪</span><span>DH Benelux 2024</span></div>
 	</div>
 	<div class="card publication" onclick="window.open('https://inria.hal.science/hal-04346939v1','_blank')">
 		<div class="publication-title">CATMuS-Medieval: Consistent Approaches to Transcribing ManuScripts</div>
@@ -736,19 +734,19 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 		<div class="publication-authors">Pauline Jacsont, Simon Gabay, Tristan Weddigen</div>
 		<div class="publication-meta"><span>🇨🇭</span><span>Humanistica 2023</span></div>
 	</div>
-	<div class="card publication" onclick="window.open('https://hal.science/hal-04569687v1','_blank')">
+	<div class="card publication" onclick="window.open('https://hal.science/hal-04093598','_blank')">
 		<div class="publication-title">Rise and Fall of Theatrical Genres in Early Modern France : a Centroid-Based Approach</div>
 		<div class="publication-authors">Simon Gabay, Florian Cafiero</div>
 		<div class="publication-meta"><span>🇧🇪</span><span>DH Benelux 2023</span></div>
 	</div>
 	<div class="card publication" onclick="window.open('https://hal.science/hal-03380805v1','_blank')">
 		<div class="publication-title">Expanding the content model of annotationBlock</div>
-		<div class="publication-authors">Alexandre Bartz, Juliette Janes, Laurent Romary, Philippe Gambette, Rachel Bawden, Pedro Ortiz Suarez, Benoît Sagot, Simon Gabay</div>
+		<div class="publication-authors">Alexandre Bartz, Juliette Janès, Laurent Romary, Philippe Gambette, Rachel Bawden, Pedro Ortiz Suarez, Benoît Sagot, Simon Gabay</div>
 		<div class="publication-meta"><span>🌐</span><span>TEI 2021</span></div>
 	</div>
 	<div class="card publication" onclick="window.open('https://hal.science/hal-03336528v1','_blank')">
 		<div class="publication-title">SegmOnto: common vocabulary and practices for analysing the layout of manuscripts (and more)</div>
-		<div class="publication-authors">Alexandre Bartz, Juliette Janes, Laurent Romary, Philippe Gambette, Rachel Bawden, Pedro Ortiz Suarez, Benoît Sagot, Simon Gabay</div>
+		<div class="publication-authors">Simon Gabay, Jean-Baptiste Camps, Ariane Pinche, Claire Jahan</div>
 		<div class="publication-meta"><span>🇨🇭</span><span>IWCP@ICDAR 2021</span></div>
 	</div>
 	<div class="card publication" onclick="window.open('https://shs.hal.science/halshs-03260086v1','_blank')">
@@ -771,12 +769,12 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 		<div class="publication-authors">Simon Gabay, Alexandre Bartz</div>
 		<div class="publication-meta"><span>🇫🇷</span><span>Humanistica 2021</span></div>
 	</div>
-	<div class="card publication" onclick="window.open('https://hal.science/hal-03527287v1','_blank')">
+	<div class="card publication" onclick="window.open('https://hal.science/hal-03527287','_blank')">
 		<div class="publication-title">Towards automatic TEI encoding via layout analysis</div>
 		<div class="publication-authors">Juliette Janes, Ariane Pinche, Claire Jahan, Simon Gabay</div>
 		<div class="publication-meta"><span>🇫🇷</span><span>Fantastic future 21</span></div>
 	</div>
-	<div class="card publication" onclick="window.open('https://hal.science/hal-03527287v1','_blank')">
+	<div class="card publication" onclick="window.open('https://hal.science/hal-03380799','_blank')">
 		<div class="publication-title">Graphs vs trees: encoding stemmata in TEI</div>
 		<div class="publication-authors">Simon Gabay, Jean-Baptiste Camps, Gustavo Fernández Riva</div>
 		<div class="publication-meta"><span>🌐</span><span>TEI 2021</span></div>
@@ -822,7 +820,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 		<div class="publication-meta"><span>🇯🇵 Tokyo</span><span>TEI 2018</span></div>
 	</div>
 </div>
-<button class="show-more-btn" onclick="toggleShowMore(this)">Show 1 more</button>
+<button class="show-more-btn" onclick="toggleShowMore(this)">Show more</button>
 </div>
 
 <div id="resources">
@@ -860,7 +858,6 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
     </div>
 </div>
 </section>
-
 
 <section id="talks">
 <h2>Talks</h2>
@@ -1014,7 +1011,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
     <div class="talk-item">
         <div class="talk-title">Jean-Luc Falcone, Simon Gabay and Florian Cafiero. Transforming archives into data-driven analyses. <i>Computational Humanities Research</i></div>
         <div class="talk-meta">
-            <span>🇫🇷 EPITA, Paris, France</span>
+            <span>🇫🇷 EPITA, Le Kremlin-Bicêtre, France</span>
             <span>December 2023</span>
         </div>
     </div>
@@ -1102,7 +1099,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
     <div class="talk-item">
         <div class="talk-title">Simon Gabay. UNIGE Digital Humanities Infrastructure. <i>DARIAH-CH Study Day</i></div>
         <div class="talk-meta">
-            <span>🇨🇭 Università della Svizzera italiana, Mendrisio<, Switerland/span>
+            <span>🇨🇭 Università della Svizzera italiana, Mendrisio, Switzerland</span>
             <span>October 2022</span>
         </div>
     </div>
@@ -1314,7 +1311,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
         </div>
     </div>
     <div class="talk-item">
-        <div class="talk-title">Simon Gabay and Pedro Ortiz Suárez. Chercher la frontière : le théâtre classique en cartes. <i>xvie s. Colloque du CIR17</i></div>
+        <div class="talk-title">Simon Gabay and Pedro Ortiz Suárez. Chercher la frontière: le théâtre classique en cartes. <i>Colloque bisannuel du CIR 17</i></div>
         <div class="talk-meta">
             <span>🇫🇷 Université d'Artois, Arras, France</span>
             <span>May 2021</span>
@@ -1582,7 +1579,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 
 <section id="supervision">
 <h2>Supervision</h2>
-<div id="phd">
+<div id="students">
 	<h3>PhD</h3>
 	<div class="supervision-grid">
 		<div class="supervision-card">
@@ -1592,7 +1589,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 		</div>
 	</div>
 </div>
-<div id="phd">
+<div id="external">
     <h3>PhD (External examiner)</h3>
     <div class="supervision-grid">
         <div class="supervision-card">
@@ -1662,7 +1659,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 		</div>
 		<div class="supervision-card">
 			<div class="supervision-name">Nicolas Champeaux</div>
-			<div class="supervision-topic">Édition du <span style="font-style: normal;">Faux Visage descouvert du fin Renard de la France</div>
+			<div class="supervision-topic">Édition du <span style="font-style: normal;">Faux Visage descouvert du fin Renard de la France</span></div>
 			<div class="supervision-period">University of Geneva, 2025</div>
 		</div>
 		<div class="supervision-card">
@@ -1692,7 +1689,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 		</div>
 		<div class="supervision-card">
 			<div class="supervision-name">Christine Payot</div>
-			<div class="supervision-topic">Du papier au Web : numeriser, transcrire, annoter, extraire et exploiter les donnees d’un registre cadastral du XIXe siecle</div>
+			<div class="supervision-topic">Du papier au Web : numériser, transcrire, annoter, extraire et exploiter les données d’un registre cadastral du XIXe siècle</div>
 			<div class="supervision-period">University of Geneva, 2024</div>
 		</div>
 		<div class="supervision-card">
@@ -1707,12 +1704,12 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 		</div>
 		<div class="supervision-card">
 			<div class="supervision-name">Sophie Dolto</div>
-			<div class="supervision-topic">Assessing collaborative writing: A stylometric study of Manchette’s and Bastid’s co-written novel</span></div>
+			<div class="supervision-topic">Assessing collaborative writing: A stylometric study of Manchette’s and Bastid’s co-written novel</div>
 			<div class="supervision-period">University of Geneva, 2024</div>
 		</div>
 		<div class="supervision-card">
 			<div class="supervision-name">Alice Leflaëc</div>
-			<div class="supervision-topic">Traduire la chute de Jérusalem : Une approche par topic modeling comparé de <span style="font-style: normal;">La Guerre des Juifs</span> de Flavius Josèphe et des <span style="font-style: normal;">Historiae</span> du Pseudo-Hégésippe</span></div>
+			<div class="supervision-topic">Traduire la chute de Jérusalem : Une approche par topic modeling comparé de <span style="font-style: normal;">La Guerre des Juifs</span> de Flavius Josèphe et des <span style="font-style: normal;">Historiae</span> du Pseudo-Hégésippe</div>
 			<div class="supervision-period">Jean Monnet University, Saint-Etienne, 2024</div>
 		</div>
 		<div class="supervision-card">
@@ -1817,7 +1814,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 	<div class="supervision-grid">
 		<div class="supervision-card">
 			<div class="supervision-name">Thibault Maillard</div>
-			<div class="supervision-topic">Numérisers les registres notariaux du Val de Bagne</div>
+			<div class="supervision-topic">Numériser les registres notariaux du Val de Bagne</div>
 			<div class="supervision-period">Commune de Val de Bagnes, 2022</div>
 		</div>
 		<div class="supervision-card">
@@ -1847,7 +1844,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
                     </div>
                     <div class="event-date">May 2026</div>
                 </div>
-                <div class="event-location">🇫🇷 EPITA, Paris, France</div>
+                <div class="event-location">🇫🇷 EPITA, Le Kremlin-Bicêtre, France</div>
                 <div class="event-description">Annual conference of the Francophone Association for Digital Humanities.</div>
             </a>
             <a href="https://dh2026.adho.org/" target="_blank" class="event-item">
@@ -1879,7 +1876,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
                     </div>
                     <div class="event-date">July 2025</div>
                 </div>
-                <div class="event-location">🇵🇹 Lisbon, Porutgal</div>
+                <div class="event-location">🇵🇹 Lisbon, Portugal</div>
                 <div class="event-description">Annual conference of the Alliance of Digital Humanities Organizations.</div>
             </a>
             <a href="https://humanistica2024.sciencesconf.org/" target="_blank" class="event-item">
@@ -1982,7 +1979,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
                     <div class="event-date">March</div>
                 </div>
                 <div class="event-location">🇨🇭 Museum of Art and History, Geneva, Switzerland</div>
-                <div class="event-description">Annual DH Day of the Uiversity of Geneva</div>
+                <div class="event-description">Annual DH Day of the University of Geneva</div>
             </a>
             <a href="https://www.unige.ch/lettres/humanites-numeriques/cours-et-seminaires/seminaires/les-humanites-numeriques-pour-la-recherche-fondamentaux" target="_blank" class="event-item">
                 <div class="event-header">
@@ -2004,11 +2001,11 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
     </div>
     
     <div id="workshops">
-        <h3>Workshops & Intensive Courses</h3>
+        <h3>Workshops &amp; Intensive Courses</h3>
         <div class="card">
           <p>Below is a selection of the workshops and intensive courses I (co-)organized.</p>
         </div>
-        <div class="card">
+        <div class="card section-items">
             <a href="https://www.cuso.ch/activity/?p=7010&uid=8528" target="_blank" class="event-item">
                 <div class="event-header">
                     <div class="event-main">
@@ -2125,7 +2122,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
                 <div class="event-header">
                     <div class="event-main">
                         <div class="event-logo">
-                            <img src="logos/logo_cosme2.png" alt="ENEXDI">
+                            <img src="logos/logo_cosme2.png" alt="COSME2">
                         </div>
                         <div class="event-info">
                             <div class="event-title">COSME<sup>2</sup> - Publier ses documents TEI avec XSLT</div>
@@ -2170,6 +2167,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
                 <div class="event-description">Winter school in digital philology</div>
             </a>
         </div>
+        <button class="show-more-btn" onclick="toggleShowMore(this)">Show more</button>
     </div>
 </section>
 
@@ -2192,7 +2190,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
                 <div class="outreach-date">May 2026</div>
             </div>
         </a>
-        <a href="https://www.rts.ch/play/radio/redirect/detail/221819a5-f747-3754-a729-b75b07472830" target="_blank" class="outreach-item">
+        <a href="https://www.rts.ch/info/sciences-tech/2026/article/l-intelligence-artificielle-au-service-des-manuscrits-medievaux-un-pont-entre-passe-et-present-29118087.html" target="_blank" class="outreach-item">
             <div class="outreach-icon"><img src="logos/logo_rts.png" alt="RTS"></div>
             <div class="outreach-content">
                 <div class="outreach-title">L'intelligence artificielle au service des manuscrits médiévaux: un pont entre passé et présent</div>
@@ -2245,7 +2243,7 @@ h3{font-size:1.3rem;color:var(--primary);margin:1.25rem 0 .6rem}
 
 </div>
 </div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 function countItems(container) {
   const selectors = ['.card', '.talk-item', '.event-item', '.publication', '.grant-card', '.supervision-card', '.outreach-item', '.timeline-item'];
   for (const sel of selectors) {
@@ -2258,9 +2256,9 @@ function countItems(container) {
 function toggleShowMore(btn) {
   const container = btn.previousElementSibling;
   const hiddenCount = countItems(container) - 5;
-  
+
   container.classList.toggle('expanded');
-  
+
   if (container.classList.contains('expanded')) {
     btn.textContent = 'Show less';
   } else {
@@ -2268,16 +2266,39 @@ function toggleShowMore(btn) {
   }
 }
 
-// Initialiser les boutons au chargement
 document.addEventListener('DOMContentLoaded', function() {
+  // Supervision : rend chaque grille dépliable (bouton masqué automatiquement si 5 éléments ou moins)
+  document.querySelectorAll('.supervision-grid').forEach(grid => {
+    grid.classList.add('section-items');
+    const btn = document.createElement('button');
+    btn.className = 'show-more-btn';
+    btn.onclick = () => toggleShowMore(btn);
+    grid.after(btn);
+  });
+
+  // Initialiser les boutons au chargement
   document.querySelectorAll('.show-more-btn').forEach(btn => {
     const container = btn.previousElementSibling;
     const hiddenCount = countItems(container) - 5;
-    
+
     if (hiddenCount > 0) {
       btn.textContent = hiddenCount > 1 ? `Show ${hiddenCount} more` : 'Show 1 more';
     } else {
       btn.classList.add('hidden');
+    }
+  });
+
+  // Mobile : referme le menu après un clic sur un lien
+  document.querySelectorAll('.sidebar a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('sidebar').classList.remove('active'));
+  });
+
+  // Publications sans lien valide (vide ou "AJOUTER") : carte non cliquable
+  document.querySelectorAll('.publication[onclick]').forEach(p => {
+    const m = p.getAttribute('onclick').match(/open\('([^']*)'/);
+    if (!m || !m[1].startsWith('http')) {
+      p.removeAttribute('onclick');
+      p.style.cursor = 'default';
     }
   });
 });
